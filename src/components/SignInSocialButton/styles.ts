@@ -29,6 +29,7 @@ export const Text = styled.Text`
   text-align: center;
 
   color: ${({ theme }) => theme.colors.heading};
+  font-family: ${({ theme }) => theme.fonts.text500};
 
   font-size: ${RFValue(15)}px;
 `;

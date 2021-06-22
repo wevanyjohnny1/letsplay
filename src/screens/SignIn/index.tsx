@@ -1,5 +1,4 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
 
 import { Container, Title, SubTitle, ImageContainer, Content } from './styles';
 
@@ -12,21 +11,16 @@ import IllustrationImg from '../../assets/illustration.png';
 export function SignIn() {
   return (
     <Container>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
       <ImageContainer source={IllustrationImg} resizeMode="stretch" />
 
       <Content>
         <Title>
-          Organize{`\n`}
-          suas jogatinas{`\n`}
-          facilmente
+          Conecte-se{'\n'}
+          e organize suas{'\n'}
+          jogatinas
         </Title>
         <SubTitle>
-          Crie grupos para jogar seus games{`\n`}
+          Crie grupos para jogar seus games{'\n'}
           favoritos com seus amigos
         </SubTitle>
         <SignInSocialButton

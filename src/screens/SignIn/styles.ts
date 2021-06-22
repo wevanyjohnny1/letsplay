@@ -6,20 +6,22 @@ export const Container = styled.View`
 
   align-items: center;
   justify-content: center;
-
-  background-color: ${({ theme }) => theme.colors.background}
 `;
 
 export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.heading};
   text-align: center;
+  line-height: 50px;
+  font-family: ${({ theme }) => theme.fonts.title700};
   font-size: ${RFValue(40)}px;
   margin-bottom: 16px;
 `;
 
 export const SubTitle = styled.Text`
   color: ${({ theme }) => theme.colors.heading};
+  font-family: ${({ theme }) => theme.fonts.title500};
   font-size: ${RFValue(15)}px;
+  line-height: 25px;
   text-align: center;
   margin-bottom: 64px;
 `;
