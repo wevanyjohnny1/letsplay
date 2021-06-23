@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 import { Container, Title, SubTitle, ImageContainer, Content } from './styles';
 
@@ -8,7 +9,14 @@ import DiscordSvg from '../../assets/discord.svg';
 
 import IllustrationImg from '../../assets/illustration.png';
 
+
+
 export function SignIn() {
+  const navigation = useNavigation();
+  function handleSignIn() {
+    navigation.navigate('Homepage')
+  }
+
   return (
     <Container>
       <ImageContainer source={IllustrationImg} resizeMode="stretch" />
@@ -26,7 +34,7 @@ export function SignIn() {
         <SignInSocialButton
           title="Entrar com discord"
           svg={DiscordSvg}
-          onPress={() => console.log('oi')}
+          onPress={handleSignIn}
         />
       </Content>
     </Container>

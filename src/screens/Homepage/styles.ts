@@ -11,3 +11,5 @@ export const Header = styled.View`
   justify-content: space-between;
   margin-top: ${getStatusBarHeight() + RFValue(26)}px;
 `;
+
+export const Content = styled.View``;

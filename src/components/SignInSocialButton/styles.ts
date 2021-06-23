@@ -24,6 +24,7 @@ export const ImageContainer = styled.View`
   border-color: ${({ theme }) => theme.colors.line};
   border-right-width: 1px;
 `;
+
 export const Text = styled.Text`
   flex: 1;
   text-align: center;

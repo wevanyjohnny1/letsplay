@@ -9,6 +9,7 @@ import { ThemeProvider } from 'styled-components';
 
 import theme from './src/global/styles/theme';
 import { SignIn } from './src/screens/SignIn';
+import { Routes } from './src/routes'
 import { Background } from './src/components/Background';
 import { Homepage } from './src/screens/Homepage';
 
@@ -32,7 +33,7 @@ export default function App() {
         translucent
       />
       <ThemeProvider theme={theme}>
-        <Homepage />
+        <Routes />
       </ThemeProvider>
     </Background>
   );
