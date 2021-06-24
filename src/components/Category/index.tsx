@@ -8,6 +8,7 @@ import { Container, ContentContainer, CheckBox, Content, Title } from './styles'
 type Props = RectButtonProps & {
   title: string;
   icon: React.FC<SvgProps>;
+  hasCheckBox?: boolean;
   checked?: boolean;
 }
 
@@ -15,20 +16,26 @@ export function Category({
   title,
   icon: Icon,
   checked = false,
+  hasCheckBox = false,
   ...rest
 }: Props) {
-  const { secondary50, secondary70 } = theme.colors;
+  const { secondary40, secondary50, secondary70, secondary75 } = theme.colors;
   return (
     <Container {...rest}>
       <ContentContainer
         colors={[secondary50, secondary70]}
       >
-        <Content style={{ opacity: checked ? 1 : 0.4 }}>
-          <CheckBox style={{
-            backgroundColor: checked ? theme.colors.primary : theme.colors.secondary100,
-            width: checked ? 10 : 12,
-            height: checked ? 10 : 12
-          }} />
+        <Content
+          style={{ opacity: checked ? 1 : 0.5 }}
+          colors={[checked ? secondary75 : secondary50, secondary40]}
+        >
+          {
+            hasCheckBox &&
+            <CheckBox style={{
+              backgroundColor: checked ? theme.colors.primary : theme.colors.secondary100,
+            }} />
+          }
+
           < Icon width={48} height={48} />
           <Title>{title}</Title>
         </Content>

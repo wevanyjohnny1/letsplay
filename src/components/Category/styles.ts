@@ -16,26 +16,29 @@ export const ContentContainer = styled(LinearGradient)`
   margin-right: 8px;
 `;
 
-export const Content = styled.View`
+export const Content = styled(LinearGradient)`
   width: 100px;
   height: 116px;
-  background-color: ${({ theme }) => theme.colors.secondary40};
   border-radius: 8px;
-  justify-content: space-between;
   align-items: center;
-  padding: 7px 0;
+  justify-content: space-between;
+  padding: 20px 0;
 `;
 
 export const CheckBox = styled.View`
-  align-self: flex-end;
-  margin-right: 7px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 10px;
+  height: 10px;
   border-color: ${({ theme }) => theme.colors.secondary50};
   border-width: 2px;
   border-radius: 3px;
+
 `;
 
 export const Title = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.title500};
+  font-family: ${({ theme }) => theme.fonts.title700};
   color: ${({ theme }) => theme.colors.heading};
   font-size: ${RFValue(15)}px;
 `;

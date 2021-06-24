@@ -4,12 +4,11 @@ import { useNavigation } from '@react-navigation/native';
 import { Container, Title, SubTitle, ImageContainer, Content } from './styles';
 
 import SignInSocialButton from '../../components/SignInSocialButton';
+import { Background } from '../../components/Background';
 
 import DiscordSvg from '../../assets/discord.svg';
 
 import IllustrationImg from '../../assets/illustration.png';
-
-
 
 export function SignIn() {
   const navigation = useNavigation();
@@ -18,25 +17,27 @@ export function SignIn() {
   }
 
   return (
-    <Container>
-      <ImageContainer source={IllustrationImg} resizeMode="stretch" />
+    <Background>
+      <Container>
+        <ImageContainer source={IllustrationImg} resizeMode="stretch" />
 
-      <Content>
-        <Title>
-          Conecte-se{'\n'}
+        <Content>
+          <Title>
+            Conecte-se{'\n'}
           e organize suas{'\n'}
           jogatinas
         </Title>
-        <SubTitle>
-          Crie grupos para jogar seus games{'\n'}
+          <SubTitle>
+            Crie grupos para jogar seus games{'\n'}
           favoritos com seus amigos
         </SubTitle>
-        <SignInSocialButton
-          title="Entrar com discord"
-          svg={DiscordSvg}
-          onPress={handleSignIn}
-        />
-      </Content>
-    </Container>
+          <SignInSocialButton
+            title="Entrar com discord"
+            svg={DiscordSvg}
+            onPress={handleSignIn}
+          />
+        </Content>
+      </Container>
+    </Background>
   )
 }

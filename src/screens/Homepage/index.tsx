@@ -4,11 +4,11 @@ import { Appointment } from '../../components/Appointment';
 import { CategorySelect } from '../../components/CategorySelect';
 import { ListDivider } from '../../components/ListDivider';
 import { ListHeader } from '../../components/ListHeader';
+import { Background } from '../../components/Background';
 import { Profile } from '../../components/Profile';
 import {
   Container,
   Header,
-  Content,
   GameContent,
   GameBox
 } from './styles';
@@ -48,30 +48,32 @@ export function Homepage() {
   }
 
   return (
-    <Container>
-      <Header>
-        <Profile />
-        <AddButton />
-      </Header>
-      <CategorySelect
-        categorySelected={category}
-        setCategory={handleCategorySelected}
-      />
-      <GameContent>
-        <ListHeader
-          title="Partidas agendadas"
-          subtitle="Total 6"
+    <Background>
+      <Container>
+        <Header>
+          <Profile />
+          <AddButton />
+        </Header>
+        <CategorySelect
+          categorySelected={category}
+          setCategory={handleCategorySelected}
         />
-        <GameBox
-          data={appointments}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => (
-            <Appointment data={item} />
-          )}
-          ItemSeparatorComponent={() => <ListDivider />}
-          showsHorizontalScrollIndicator={false}
-        />
-      </GameContent>
-    </Container>
+        <GameContent>
+          <ListHeader
+            title="Partidas agendadas"
+            subtitle="Total 6"
+          />
+          <GameBox
+            data={appointments}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => (
+              <Appointment data={item} />
+            )}
+            ItemSeparatorComponent={() => <ListDivider />}
+            showsHorizontalScrollIndicator={false}
+          />
+        </GameContent>
+      </Container>
+    </Background>
   )
 }
