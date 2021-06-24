@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AddButton } from '../../components/AddButton';
 import { CategorySelect } from '../../components/CategorySelect';
 import { Profile } from '../../components/Profile';
@@ -9,6 +9,12 @@ import {
 } from './styles';
 
 export function Homepage() {
+  const [category, setCategory] = useState('');
+
+  function handleCategorySelected(categoryId: string) {
+    categoryId === category ? setCategory('') : setCategory(categoryId);
+  }
+
   return (
     <Container>
       <Header>
@@ -16,7 +22,10 @@ export function Homepage() {
         <AddButton />
       </Header>
       <Content>
-        <CategorySelect />
+        <CategorySelect
+          categorySelected={category}
+          setCategory={handleCategorySelected}
+        />
       </Content>
     </Container>
   )

@@ -3,7 +3,7 @@ import { RectButtonProps } from 'react-native-gesture-handler';
 import theme from '../../global/styles/theme';
 import { SvgProps } from 'react-native-svg';
 
-import { ContentContainer, LinearGrad, Content } from './styles';
+import { Container, ContentContainer, CheckBox, Content, Title } from './styles';
 
 type Props = RectButtonProps & {
   title: string;
@@ -19,14 +19,20 @@ export function Category({
 }: Props) {
   const { secondary50, secondary70 } = theme.colors;
   return (
-    <ContentContainer {...rest}>
-      <LinearGrad
+    <Container {...rest}>
+      <ContentContainer
         colors={[secondary50, secondary70]}
       >
         <Content style={{ opacity: checked ? 1 : 0.4 }}>
-
+          <CheckBox style={{
+            backgroundColor: checked ? theme.colors.primary : theme.colors.secondary100,
+            width: checked ? 10 : 12,
+            height: checked ? 10 : 12
+          }} />
+          < Icon width={48} height={48} />
+          <Title>{title}</Title>
         </Content>
-      </LinearGrad>
-    </ContentContainer>
+      </ContentContainer>
+    </Container>
   )
 }
