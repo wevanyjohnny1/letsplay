@@ -12,9 +12,12 @@ import {
   GameContent,
   GameBox
 } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 export function Homepage() {
   const [category, setCategory] = useState('');
+
+  const navigation = useNavigation();
 
   const appointments = [
     {
@@ -47,6 +50,10 @@ export function Homepage() {
     categoryId === category ? setCategory('') : setCategory(categoryId);
   }
 
+  function handleAppointmentDetails() {
+    navigation.navigate('AppointmentDetails')
+  }
+
   return (
     <Background>
       <Container>
@@ -67,7 +74,10 @@ export function Homepage() {
             data={appointments}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
-              <Appointment data={item} />
+              <Appointment
+                data={item}
+                onPress={handleAppointmentDetails}
+              />
             )}
             ItemSeparatorComponent={() => <ListDivider />}
             showsHorizontalScrollIndicator={false}
