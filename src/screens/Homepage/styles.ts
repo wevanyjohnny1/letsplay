@@ -13,3 +13,12 @@ export const Header = styled.View`
 `;
 
 export const Content = styled.View``;
+
+export const GameContent = styled.View`
+  margin-top: 42px;
+`;
+
+export const GameBox = styled.FlatList`
+  margin-top: 24px;
+  margin-left: 24px;
+`;

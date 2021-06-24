@@ -1,15 +1,47 @@
 import React, { useState } from 'react';
 import { AddButton } from '../../components/AddButton';
+import { Appointment } from '../../components/Appointment';
 import { CategorySelect } from '../../components/CategorySelect';
+import { ListDivider } from '../../components/ListDivider';
+import { ListHeader } from '../../components/ListHeader';
 import { Profile } from '../../components/Profile';
 import {
   Container,
   Header,
-  Content
+  Content,
+  GameContent,
+  GameBox
 } from './styles';
 
 export function Homepage() {
   const [category, setCategory] = useState('');
+
+  const appointments = [
+    {
+      id: '1',
+      guild: {
+        id: '1',
+        name: 'Lendários',
+        icon: null,
+        owner: true
+      },
+      category: '1',
+      date: '22/06 às 20:40h',
+      description: 'É hoje que vamos chegar ao challenger sem porder uma partida da md10'
+    },
+    {
+      id: '2',
+      guild: {
+        id: '1',
+        name: 'Lendários',
+        icon: null,
+        owner: true
+      },
+      category: '1',
+      date: '22/06 às 20:40h',
+      description: 'É hoje que vamos chegar ao challenger sem porder uma partida da md10'
+    }
+  ]
 
   function handleCategorySelected(categoryId: string) {
     categoryId === category ? setCategory('') : setCategory(categoryId);
@@ -21,12 +53,25 @@ export function Homepage() {
         <Profile />
         <AddButton />
       </Header>
-      <Content>
-        <CategorySelect
-          categorySelected={category}
-          setCategory={handleCategorySelected}
+      <CategorySelect
+        categorySelected={category}
+        setCategory={handleCategorySelected}
+      />
+      <GameContent>
+        <ListHeader
+          title="Partidas agendadas"
+          subtitle="Total 6"
         />
-      </Content>
+        <GameBox
+          data={appointments}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <Appointment data={item} />
+          )}
+          ItemSeparatorComponent={() => <ListDivider />}
+          showsHorizontalScrollIndicator={false}
+        />
+      </GameContent>
     </Container>
   )
 }
