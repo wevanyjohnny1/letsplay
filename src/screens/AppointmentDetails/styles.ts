@@ -30,4 +30,7 @@ export const Subtitle = styled.Text`
   color: ${({ theme }) => theme.colors.heading};
 `;
 
-export const PlayersList = styled.FlatList``;
+export const PlayersList = styled.FlatList`
+  margin-left: 24px;
+  margin-top: 27px;
+`;

@@ -8,19 +8,21 @@ import BannerImg from '../../assets/banner.png';
 import { Background } from '../../components/Background';
 import { ListHeader } from '../../components/ListHeader';
 import { AppHeader } from '../../components/AppHeader';
+import { Member } from '../../components/Member';
+import { ListDivider } from '../../components/ListDivider';
 
 export function AppointmentDetails() {
   const members = [
     {
       id: '1',
       username: 'Johnny',
-      avatar_url: 'https://github.com/johnnywevany1.png',
+      avatar_url: 'https://github.com/wevanyjohnny1.png',
       status: 'online'
     },
     {
       id: '2',
       username: 'Laura',
-      avatar_url: 'https://github.com/johnnywevany1.png',
+      avatar_url: 'https://github.com/wevanyjohnny1.png',
       status: 'offline'
     }
   ]
@@ -61,8 +63,9 @@ export function AppointmentDetails() {
         data={members}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
-          
+          <Member data={item} />
         )}
+        ItemSeparatorComponent={() => <ListDivider />}
       />
     </Background>
   )
