@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { Alert, ActivityIndicator } from 'react-native';
 
 import { Container, Title, SubTitle, ImageContainer, Content } from './styles';
 
@@ -10,14 +10,18 @@ import DiscordSvg from '../../assets/discord.svg';
 
 import IllustrationImg from '../../assets/illustration.png';
 import { useAuth } from '../../hooks/auth';
+import theme from '../../global/styles/theme';
 
 export function SignIn() {
-  const navigation = useNavigation();
 
-  const { user } = useAuth();
+  const { loading, signIn } = useAuth();
 
-  function handleSignIn() {
-    navigation.navigate('Homepage')
+  async function handleSignIn() {
+    try {
+      await signIn();
+    } catch (error) {
+      Alert.alert(error);
+    }
   }
 
   return (
@@ -35,11 +39,14 @@ export function SignIn() {
             Crie grupos para jogar seus games{'\n'}
           favoritos com seus amigos
         </SubTitle>
-          <SignInSocialButton
-            title="Entrar com discord"
-            svg={DiscordSvg}
-            onPress={handleSignIn}
-          />
+          {
+            loading ? <ActivityIndicator color={theme.colors.primary} /> :
+              <SignInSocialButton
+                title="Entrar com discord"
+                svg={DiscordSvg}
+                onPress={handleSignIn}
+              />
+          }
         </Content>
       </Container>
     </Background>
