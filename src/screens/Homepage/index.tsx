@@ -76,20 +76,22 @@ export function Homepage() {
             title="Partidas agendadas"
             subtitle="Total 6"
           />
-          <GameBox
-            data={appointments}
-            keyExtractor={item => item.id}
-            renderItem={({ item }) => (
-              <Appointment
-                data={item}
-                onPress={handleAppointmentDetails}
-              />
-            )}
-            ItemSeparatorComponent={() => <ListDivider />}
-            showsHorizontalScrollIndicator={false}
-          />
+
         </GameContent>
       </Container>
-    </Background>
+      <GameBox
+        data={appointments}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <Appointment
+            data={item}
+            onPress={handleAppointmentDetails}
+          />
+        )}
+        ItemSeparatorComponent={() => <ListDivider />}
+        contentContainerStyle={{ paddingBottom: 69 }}
+        showsHorizontalScrollIndicator={false}
+      />
+    </Background >
   )
 }

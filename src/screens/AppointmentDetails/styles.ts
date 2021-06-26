@@ -29,6 +29,7 @@ export const Subtitle = styled.Text`
   font-size: ${RFValue(13)}px;
   font-family: ${({ theme }) => theme.fonts.text400};
   color: ${({ theme }) => theme.colors.heading};
+  line-height: 21px;
 `;
 
 export const PlayersList = styled.FlatList`

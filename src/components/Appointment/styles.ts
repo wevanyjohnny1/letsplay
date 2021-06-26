@@ -1,3 +1,4 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import { RectButton } from 'react-native-gesture-handler';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';

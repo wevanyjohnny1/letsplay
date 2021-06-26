@@ -21,12 +21,12 @@ export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.title700};
   color: ${({ theme }) => theme.colors.heading};
   font-size: ${RFValue(18)}px;
-  margin-bottom: 11px;
+  margin-bottom: 4px;
 `;
 
 export const Type = styled.Text`
   font-family: ${({ theme }) => theme.fonts.text400};
   color: ${({ theme }) => theme.colors.highlight};
   font-size: ${RFValue(13)}px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 `;

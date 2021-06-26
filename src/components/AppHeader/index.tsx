@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { View } from 'react-native';
 import theme from '../../global/styles/theme';
 import { Feather } from '@expo/vector-icons';
 
@@ -39,10 +40,13 @@ export function AppHeader({ title, action }: Props) {
       </Title>
 
       {
-        action &&
-        <Action>
-          {action}
-        </Action>
+        action
+          ?
+          <Action>
+            {action}
+          </Action>
+          :
+          <View style={{ width: 24 }} />
       }
     </Container>
   )

@@ -9,9 +9,13 @@ import { Background } from '../../components/Background';
 import DiscordSvg from '../../assets/discord.svg';
 
 import IllustrationImg from '../../assets/illustration.png';
+import { useAuth } from '../../hooks/auth';
 
 export function SignIn() {
   const navigation = useNavigation();
+
+  const { user } = useAuth();
+
   function handleSignIn() {
     navigation.navigate('Homepage')
   }

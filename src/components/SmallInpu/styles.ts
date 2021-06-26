@@ -6,6 +6,8 @@ export const Container = styled.TextInput`
   height: 48px;
   background-color: ${({ theme }) => theme.colors.secondary40};
   color: ${({ theme }) => theme.colors.heading};
+  border-width: 1px;
+  border-color: ${({ theme }) => theme.colors.secondary50};
   border-radius: 8px;
   font-family: ${({ theme }) => theme.fonts.text400};
   font-size: ${RFValue(13)}px;

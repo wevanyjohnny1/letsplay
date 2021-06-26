@@ -6,9 +6,12 @@ export const Container = styled.TextInput`
   height: 95px;
   background-color: ${({ theme }) => theme.colors.secondary40};
   color: ${({ theme }) => theme.colors.heading};
+  border-width: 1px;
+  border-color: ${({ theme }) => theme.colors.secondary50};
   border-radius: 8px;
   font-family: ${({ theme }) => theme.fonts.text400};
   font-size: ${RFValue(13)}px;
   margin-right: 4px;
-  text-align: center;
+  padding: 0 16px;
+  padding-top: 16px;
 `;

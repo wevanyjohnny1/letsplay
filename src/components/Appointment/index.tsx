@@ -18,13 +18,7 @@ import {
   DateText
 } from './styles';
 import { categories } from '../../utils/categories'
-
-export type GuildProps = {
-  id: string;
-  name: string;
-  icon: null;
-  owner: boolean;
-}
+import { GuildProps } from '../Guild';
 
 export type AppointmentProps = {
   id: string;
@@ -41,7 +35,7 @@ type Props = RectButtonProps & {
 export function Appointment({ data, ...rest }: Props) {
   const [category] = categories.filter(item => item.id === data.category);
   const { owner } = data.guild;
-  const { primary, on } = theme.colors;
+  const { primary, on, secondary50, secondary70 } = theme.colors;
 
   return (
     <Container {...rest}>

@@ -41,9 +41,17 @@ export function AppointmentCreate() {
     setOpenGuildsModal(true);
   }
 
+  function handleCloseGuildsModal() {
+    setOpenGuildsModal(false);
+  }
+
   function handleGuildSelect(guildSelectec: GuildProps) {
     setGuild(guildSelectec);
     setOpenGuildsModal(false);
+  }
+
+  function handleCategorySelect(categoryId: string) {
+    setCategory(categoryId)
   }
 
   return (
@@ -65,7 +73,7 @@ export function AppointmentCreate() {
 
           <CategorySelect
             hasCheckBox
-            setCategory={setCategory}
+            setCategory={handleCategorySelect}
             categorySelected={category}
           />
 
@@ -93,8 +101,8 @@ export function AppointmentCreate() {
             <Field>
 
               <FieldText>
-                <Title>
-                  Dia e mês
+                <Title style={{ marginBottom: 10 }}>
+                  Data
               </Title>
                 <Column>
                   <SmallInput maxLength={2} />
@@ -106,7 +114,7 @@ export function AppointmentCreate() {
               </FieldText>
 
               <FieldText>
-                <Title>
+                <Title style={{ marginBottom: 10 }}>
                   Horário
               </Title>
                 <Column>
@@ -148,7 +156,7 @@ export function AppointmentCreate() {
         </Container>
       </Background>
 
-      <ModalView visible={openGuildsModal}>
+      <ModalView visible={openGuildsModal} closeModal={handleCloseGuildsModal}>
         <Guilds
           handleGuildSelect={handleGuildSelect}
         />

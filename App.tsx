@@ -7,11 +7,11 @@ import AppLoading from 'expo-app-loading';
 
 import { ThemeProvider } from 'styled-components';
 
+import { AuthProvider } from './src/hooks/auth';
+
 import theme from './src/global/styles/theme';
-import { SignIn } from './src/screens/SignIn';
 import { Routes } from './src/routes'
 import { Background } from './src/components/Background';
-import { Homepage } from './src/screens/Homepage';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -26,16 +26,19 @@ export default function App() {
   }
 
   return (
-    <Background>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
-      <ThemeProvider theme={theme}>
-        <Routes />
-      </ThemeProvider>
-    </Background>
+    <ThemeProvider theme={theme}>
+      <Background>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="transparent"
+          translucent
+        />
+        <AuthProvider>
+          <Routes />
+        </AuthProvider>
+      </Background>
+    </ThemeProvider>
+
   );
 }
 

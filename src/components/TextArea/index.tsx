@@ -6,6 +6,7 @@ import { Container } from './styles';
 export function TextArea({ ...rest }: TextInputProps) {
   return (
     <Container
+      style={{ textAlignVertical: 'top' }}
       {...rest}
     />
   )

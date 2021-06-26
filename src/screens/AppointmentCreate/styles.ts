@@ -38,9 +38,10 @@ export const SelectButton = styled(RectButton)`
 export const SelectImage = styled.View`
   width: 64px;
   height: 68px;
-  background-color: ${({ theme }) => theme.colors.secondary50};
+  background-color: ${({ theme }) => theme.colors.secondary40};
   border-width: 1px;
   border-radius: 8px;
+  border-color: ${({ theme }) => theme.colors.secondary50};
 `;
 
 export const SelectBody = styled.View`
