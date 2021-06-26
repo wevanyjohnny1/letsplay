@@ -1,15 +1,17 @@
 import React from 'react';
 import { Fontisto } from '@expo/vector-icons';
 
-import { ShareButton, Banner, Title, Subtitle, BannerContent, PlayersList } from './styles';
+import { ShareButton, Banner, Title, Subtitle, BannerContent, PlayersList, Footer } from './styles';
 import theme from '../../global/styles/theme';
 import BannerImg from '../../assets/banner.png';
+import DiscordSvg from '../../assets/discord.svg';
 
 import { Background } from '../../components/Background';
 import { ListHeader } from '../../components/ListHeader';
 import { AppHeader } from '../../components/AppHeader';
 import { Member } from '../../components/Member';
 import { ListDivider } from '../../components/ListDivider';
+import SignInSocialButton from '../../components/SignInSocialButton';
 
 export function AppointmentDetails() {
   const members = [
@@ -56,7 +58,7 @@ export function AppointmentDetails() {
 
       <ListHeader
         title="Jogadores"
-        subtitle="Total 3"
+        subtitle="Total 2"
       />
 
       <PlayersList
@@ -67,6 +69,13 @@ export function AppointmentDetails() {
         )}
         ItemSeparatorComponent={() => <ListDivider />}
       />
+
+      <Footer>
+        <SignInSocialButton
+          title="Entrar na partida"
+          svg={DiscordSvg}
+        />
+      </Footer>
     </Background>
   )
 }

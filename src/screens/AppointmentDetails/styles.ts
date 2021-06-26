@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { BorderlessButton } from 'react-native-gesture-handler';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export const ShareButton = styled(BorderlessButton)``;
@@ -33,4 +34,9 @@ export const Subtitle = styled.Text`
 export const PlayersList = styled.FlatList`
   margin-left: 24px;
   margin-top: 27px;
+`;
+
+export const Footer = styled.View`
+  padding: 20px 24px;
+  margin-bottom: ${getBottomSpace()}px;
 `;

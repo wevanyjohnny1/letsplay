@@ -8,7 +8,7 @@ import { RFValue } from 'react-native-responsive-fontsize';
 export const Container = styled(LinearGradient)`
   width: 100%;
   height: 104px;
-  padding-top: ${getStatusBarHeight()};
+  padding-top: ${getStatusBarHeight()}px;
   padding: 0 24px;
   flex-direction: row;
   justify-content: center;
