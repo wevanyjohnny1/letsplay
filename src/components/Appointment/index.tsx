@@ -40,7 +40,7 @@ export function Appointment({ data, ...rest }: Props) {
   return (
     <Container {...rest}>
       <Content>
-        <GuildIcon />
+        <GuildIcon guildId={data.guild.id} iconId={data.guild.icon} />
 
         <ContentBox>
           <Header>
@@ -48,7 +48,7 @@ export function Appointment({ data, ...rest }: Props) {
               {data.guild.name}
             </Title>
             <CategoryTitle>
-              {category.title}
+              {category?.title}
             </CategoryTitle>
           </Header>
 

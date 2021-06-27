@@ -14,7 +14,7 @@ export const Content = styled.View`
 `;
 
 export const ContentBox = styled.View`
-
+  padding-left: 20px;
 `;
 
 export const Title = styled.Text`

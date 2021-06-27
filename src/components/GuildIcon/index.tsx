@@ -1,13 +1,37 @@
 import React from 'react';
 
-import { Container } from './styles'
+import { Content, Container } from './styles';
+import DiscordSvg from '../../assets/discord.svg';
+import theme from '../../global/styles/theme';
 
-export function GuildIcon() {
-  const uri = "https://cdn.icon-icons.com/icons2/1029/PNG/256/Luffys_flag_icon-icons.com_76118.png"
+const { CDN_IMAGE } = process.env;
+
+type Props = {
+  guildId: string;
+  iconId: string | null;
+}
+
+export function GuildIcon({ guildId, iconId }: Props) {
+  const uri = `${CDN_IMAGE}/icons/${guildId}/${iconId}.png`;
+
   return (
-    <Container
-      source={{ uri }}
-      resizeMode="cover"
-    />
+    <Content
+      style={{
+        backgroundColor: !iconId ? theme.colors.discord : null
+      }}
+    >
+      {
+        iconId ?
+          <Container
+            source={{ uri }}
+            resizeMode="cover"
+          />
+          :
+          <DiscordSvg
+            width={40}
+            height={40}
+          />
+      }
+    </Content>
   )
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Alert } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 import { useAuth } from '../../hooks/auth';
 import { Avatar } from '../Avatar';
 import {
@@ -11,13 +13,30 @@ import {
 } from './styles';
 
 export function Profile() {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
+
+  function handleSignOut() {
+    Alert.alert('Logout', 'Deseja sair?',
+      [
+        {
+          text: 'Não',
+          style: 'cancel'
+        },
+        {
+          text: 'Sim',
+          onPress: () => signOut()
+        }
+      ])
+  }
 
   return (
     <UserContainer>
-      <Avatar
-        urlImage={user.avatar}
-      />
+
+      <RectButton onPress={handleSignOut}>
+        <Avatar
+          urlImage={user.avatar}
+        />
+      </RectButton>
       <TextContainer>
         <GreetingsContainer>
           <Greetings>

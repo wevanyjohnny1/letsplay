@@ -27,6 +27,7 @@ export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.title700};
   color: ${({ theme }) => theme.colors.heading};
   font-size: ${RFValue(18)}px;
+  padding-left: 10px;
 `;
 
 export const CategoryTitle = styled.Text`
@@ -53,6 +54,7 @@ export const Footer = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  padding-left: 10px;
 `;
 
 export const DateInfo = styled.View`
