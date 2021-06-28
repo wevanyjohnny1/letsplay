@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   Container,
   Header,
-  GameBox
+  GameBox,
 } from './styles';
 
 import { Appointment, AppointmentProps } from '../../components/Appointment';
@@ -68,10 +68,6 @@ export function Homepage() {
           categorySelected={category}
           setCategory={handleCategorySelected}
         />
-        {/* <GameContent> */}
-
-
-        {/* </GameContent> */}
       </Container>
       {
         loading ? <Load /> :

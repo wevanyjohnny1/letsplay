@@ -1,42 +1,47 @@
-import React from 'react';
-import { Alert } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
+import React, { useState } from 'react';
+import { AntDesign } from '@expo/vector-icons';
 import { useAuth } from '../../hooks/auth';
 import { Avatar } from '../Avatar';
 import {
   UserContainer,
+  AvatarContainer,
   TextContainer,
   Greetings,
   UserName,
   UserStatus,
-  GreetingsContainer
+  GreetingsContainer,
+  LogoutButton
 } from './styles';
+import theme from '../../global/styles/theme';
+import { ModalLogout } from '../ModalLogout';
+import { SignOutBox } from '../SignOutBox';
 
 export function Profile() {
-  const { user, signOut } = useAuth();
+  const { user } = useAuth();
+  const [openLogoutModal, setOpenLogoutModal] = useState(false);
 
-  function handleSignOut() {
-    Alert.alert('Logout', 'Deseja sair?',
-      [
-        {
-          text: 'Não',
-          style: 'cancel'
-        },
-        {
-          text: 'Sim',
-          onPress: () => signOut()
-        }
-      ])
+  function handleOpenLogoutModal() {
+    setOpenLogoutModal(true);
+  }
+
+  function handleCloseLogoutModal() {
+    setOpenLogoutModal(false);
   }
 
   return (
     <UserContainer>
-
-      <RectButton onPress={handleSignOut}>
+      <AvatarContainer>
         <Avatar
           urlImage={user.avatar}
         />
-      </RectButton>
+        <LogoutButton onPress={handleOpenLogoutModal}>
+          <AntDesign
+            name="poweroff"
+            size={15}
+            color={theme.colors.primary}
+          />
+        </LogoutButton>
+      </AvatarContainer>
       <TextContainer>
         <GreetingsContainer>
           <Greetings>
@@ -50,8 +55,9 @@ export function Profile() {
           Hoje é dia de vitória
         </UserStatus>
       </TextContainer>
-
-
+      <ModalLogout visible={openLogoutModal} closeModal={handleCloseLogoutModal}>
+        <SignOutBox />
+      </ModalLogout>
     </UserContainer>
   )
 }
