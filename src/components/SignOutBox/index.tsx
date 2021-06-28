@@ -37,7 +37,8 @@ export function SignOutBox() {
           </ButtonNo>
         </ButtonBorder>
         <SignOutButton
-          signOut={Test}
+          logOut={signOut}
+        // onPress={signOut}
         />
       </ButtonContainer>
     </Container>

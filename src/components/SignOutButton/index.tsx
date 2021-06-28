@@ -4,12 +4,12 @@ import { RectButtonProps } from 'react-native-gesture-handler';
 import { ButtonYes, ButtonText } from './styles';
 
 interface Props extends RectButtonProps {
-  signOut: () => void;
+  logOut: () => void;
 }
 
-export function SignOutButton({ signOut, ...rest }: Props) {
+export function SignOutButton({ logOut, ...rest }: Props) {
   return (
-    <ButtonYes onPress={signOut}>
+    <ButtonYes onPress={logOut} {...rest}>
       <ButtonText>
         Sim
       </ButtonText>
