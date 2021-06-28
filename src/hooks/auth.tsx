@@ -19,7 +19,7 @@ const { RESPONSE_TYPE } = process.env;
 import { api } from '../services/api';
 import { COLLECTION_APPOINTMENTS, COLLECTION_USERS } from '../configs/database';
 
-type User = {
+interface User {
   id: string;
   username: string;
   firstName: string;
@@ -28,14 +28,14 @@ type User = {
   token: string;
 }
 
-type AuthContextData = {
+interface AuthContextData {
   user: User;
   loading: boolean;
   signIn: () => Promise<void>;
   signOut: () => Promise<void>;
 }
 
-type AuthProviderProps = {
+interface AuthProviderProps {
   children: ReactNode;
 }
 

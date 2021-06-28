@@ -6,7 +6,7 @@ import theme from '../../global/styles/theme';
 
 const { CDN_IMAGE } = process.env;
 
-type Props = {
+interface Props {
   guildId: string;
   iconId: string | null;
 }

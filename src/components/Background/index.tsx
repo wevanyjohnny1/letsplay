@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { Container } from './styles';
 import theme from '../../global/styles/theme';
 
-type Props = {
+interface Props {
   children: ReactNode;
 }
 

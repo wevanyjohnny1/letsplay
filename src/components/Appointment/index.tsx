@@ -20,7 +20,7 @@ import {
 import { categories } from '../../utils/categories'
 import { GuildProps } from '../Guild';
 
-export type AppointmentProps = {
+export interface AppointmentProps {
   id: string;
   guild: GuildProps;
   category: string;
@@ -28,7 +28,7 @@ export type AppointmentProps = {
   description: string;
 }
 
-type Props = RectButtonProps & {
+interface Props extends RectButtonProps {
   data: AppointmentProps;
 }
 

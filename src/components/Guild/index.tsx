@@ -14,22 +14,22 @@ import {
 } from './styles';
 import theme from '../../global/styles/theme';
 
-export type GuildProps = {
+export interface GuildProps {
   id: string;
   name: string;
   icon: string | null;
   owner: boolean;
 }
 
-type Props = TouchableHighlightProps & {
+interface Props extends TouchableHighlightProps {
   data: GuildProps;
 }
 
 export function Guild({ data, ...rest }: Props) {
   return (
     <Container
-      activeOpacity={0.7}
       {...rest}
+      activeOpacity={0.7}
     >
       <GuildIcon guildId={data.id} iconId={data.icon} />
 

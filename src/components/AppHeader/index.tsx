@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 
 // import { Background } from '../../components/Background';
 
-type Props = {
+interface Props {
   title: string;
   action?: ReactNode;
 }

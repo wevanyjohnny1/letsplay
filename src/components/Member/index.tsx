@@ -4,14 +4,14 @@ import { Avatar } from '../Avatar';
 
 import { Container, Title, Status, StatusTitle, ContentText, StatusBuble } from './styles';
 
-export type MemberProps = {
+export interface MemberProps {
   id: string;
   username: string;
   avatar_url: string;
   status: string;
 }
 
-type Props = {
+interface Props {
   data: MemberProps;
 }
 

@@ -3,6 +3,8 @@ import { Platform } from 'react-native';
 import uuid from 'react-native-uuid';
 import { Feather } from '@expo/vector-icons';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { useNavigation } from '@react-navigation/core';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {
   ContainerAvoidView,
@@ -32,9 +34,7 @@ import Button from '../../components/Button';
 import { ModalView } from '../../components/ModalView';
 import { Guilds } from '../Guilds';
 import { GuildProps } from '../../components/Guild';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
-import { useNavigation } from '@react-navigation/core';
 
 export function AppointmentCreate() {
   const [category, setCategory] = useState('');

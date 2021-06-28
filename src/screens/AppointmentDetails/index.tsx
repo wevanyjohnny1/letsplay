@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { Alert, Platform, Share } from 'react-native';
 import * as Linking from 'expo-linking';
-
 import { Fontisto } from '@expo/vector-icons';
 
 import { ShareButton, Banner, Title, Subtitle, BannerContent, PlayersList, Footer } from './styles';
@@ -20,11 +19,11 @@ import { AppointmentProps } from '../../components/Appointment';
 import { api } from '../../services/api';
 import { Load } from '../../components/Load';
 
-type Params = {
+interface Params {
   guildSelected: AppointmentProps;
 }
 
-type GuildWidget = {
+interface GuildWidget {
   id: string;
   name: string;
   instant_invite: string;

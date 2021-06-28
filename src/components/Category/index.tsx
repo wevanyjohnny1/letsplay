@@ -5,7 +5,7 @@ import { SvgProps } from 'react-native-svg';
 
 import { Container, ContentContainer, CheckBox, Content, Title } from './styles';
 
-type Props = RectButtonProps & {
+interface Props extends RectButtonProps {
   title: string;
   icon: React.FC<SvgProps>;
   hasCheckBox?: boolean;

@@ -1,16 +1,14 @@
 import React from 'react';
 import { Alert, ActivityIndicator } from 'react-native';
 
+import theme from '../../global/styles/theme';
 import { Container, Title, SubTitle, ImageContainer, Content } from './styles';
 
 import SignInSocialButton from '../../components/SignInSocialButton';
 import { Background } from '../../components/Background';
-
 import DiscordSvg from '../../assets/discord.svg';
-
 import IllustrationImg from '../../assets/illustration.png';
 import { useAuth } from '../../hooks/auth';
-import theme from '../../global/styles/theme';
 
 export function SignIn() {
 

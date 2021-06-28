@@ -2,7 +2,7 @@ import React from 'react';
 import theme from '../../global/styles/theme';
 import { Container, UserImage } from './styles';
 
-type Props = {
+interface Props {
   urlImage: string;
 }
 

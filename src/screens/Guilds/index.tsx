@@ -6,7 +6,7 @@ import { api } from '../../services/api';
 
 import { Container, Content } from './styles';
 
-type Props = {
+interface Props {
   handleGuildSelect: (guild: GuildProps) => void;
 }
 

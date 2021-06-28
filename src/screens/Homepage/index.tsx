@@ -1,18 +1,20 @@
 import React, { useState, useCallback } from 'react';
 import { AddButton } from '../../components/AddButton';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import {
+  Container,
+  Header,
+  GameBox
+} from './styles';
+
 import { Appointment, AppointmentProps } from '../../components/Appointment';
 import { CategorySelect } from '../../components/CategorySelect';
 import { ListDivider } from '../../components/ListDivider';
 import { ListHeader } from '../../components/ListHeader';
 import { Background } from '../../components/Background';
 import { Profile } from '../../components/Profile';
-import {
-  Container,
-  Header,
-  GameBox
-} from './styles';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
 import { Load } from '../../components/Load';
 

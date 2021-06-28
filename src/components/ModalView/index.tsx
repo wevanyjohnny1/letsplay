@@ -4,7 +4,7 @@ import { Background } from '../Background';
 
 import { Container, Overlay, ContentContainer, Bar } from './styles';
 
-type Props = ModalProps & {
+interface Props extends ModalProps {
   children: ReactNode;
   closeModal: () => void;
 }
