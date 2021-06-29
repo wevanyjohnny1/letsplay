@@ -67,9 +67,11 @@ CDN_IMAGE=
 
 <div align="center">
   <small>Desenvolvido por Johnny Wevany Alves Santos</small>
+  
+  <br /> 
 
   <a href="https://www.linkedin.com/in/johnny-wevany/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/> <br /> 
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/> 
   </a>
               
 </div>
