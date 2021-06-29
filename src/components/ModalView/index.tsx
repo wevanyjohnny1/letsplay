@@ -4,12 +4,12 @@ import { Background } from '../Background';
 
 import { Overlay, ContentContainer, Bar } from './styles';
 
-interface Props extends ModalProps {
+interface IModalViewProps extends ModalProps {
   children: ReactNode;
   closeModal: () => void;
 }
 
-export function ModalView({ children, closeModal, ...rest }: Props) {
+export function ModalView({ children, closeModal, ...rest }: IModalViewProps) {
   return (
     <Modal
       transparent

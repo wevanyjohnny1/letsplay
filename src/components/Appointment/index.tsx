@@ -20,7 +20,7 @@ import {
 import { categories } from '../../utils/categories'
 import { GuildProps } from '../Guild';
 
-export interface AppointmentProps {
+export interface IAppointmentProps {
   id: string;
   guild: GuildProps;
   category: string;
@@ -29,13 +29,13 @@ export interface AppointmentProps {
 }
 
 interface Props extends RectButtonProps {
-  data: AppointmentProps;
+  data: IAppointmentProps;
 }
 
 export function Appointment({ data, ...rest }: Props) {
   const [category] = categories.filter(item => item.id === data.category);
   const { owner } = data.guild;
-  const { primary, on, secondary50, secondary70 } = theme.colors;
+  const { primary, on } = theme.colors;
 
   return (
     <Container {...rest}>

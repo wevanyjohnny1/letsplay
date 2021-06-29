@@ -6,7 +6,7 @@ import { categories } from '../../utils/categories';
 
 import { Category } from '../Category';
 
-interface Props {
+interface ICategorySelectProps {
   categorySelected: string;
   setCategory: (categoryId: string) => void;
   hasCheckBox?: boolean;
@@ -16,7 +16,7 @@ export function CategorySelect({
   categorySelected,
   setCategory,
   hasCheckBox = false
-}: Props) {
+}: ICategorySelectProps) {
   return (
     <Container
       horizontal

@@ -4,12 +4,12 @@ import { Background } from '../Background';
 
 import { Overlay, ContentContainer } from './styles';
 
-interface Props extends ModalProps {
+interface IModalLogoutProps extends ModalProps {
   children: ReactNode;
   closeModal: () => void;
 }
 
-export function ModalLogout({ children, closeModal, ...rest }: Props) {
+export function ModalLogout({ children, closeModal, ...rest }: IModalLogoutProps) {
   return (
     <Modal
       transparent

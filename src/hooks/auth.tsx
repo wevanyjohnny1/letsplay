@@ -19,7 +19,7 @@ const { RESPONSE_TYPE } = process.env;
 import { api } from '../services/api';
 import { COLLECTION_APPOINTMENTS, COLLECTION_USERS } from '../configs/database';
 
-interface User {
+interface IUser {
   id: string;
   username: string;
   firstName: string;
@@ -28,14 +28,14 @@ interface User {
   token: string;
 }
 
-interface AuthContextData {
-  user: User;
+interface IAuthContextData {
+  user: IUser;
   loading: boolean;
   signIn: () => Promise<void>;
   signOut: () => Promise<void>;
 }
 
-interface AuthProviderProps {
+interface IAuthProviderProps {
   children: ReactNode;
 }
 
@@ -46,10 +46,10 @@ type AuthorizationResponse = AuthSession.AuthSessionResult & {
   }
 }
 
-export const AuthContext = createContext({} as AuthContextData);
+export const AuthContext = createContext({} as IAuthContextData);
 
-function AuthProvider({ children }: AuthProviderProps) {
-  const [user, setUser] = useState<User>({} as User);
+function AuthProvider({ children }: IAuthProviderProps) {
+  const [user, setUser] = useState<IUser>({} as IUser);
   const [loading, setLoading] = useState(false);
 
   async function signIn() {
@@ -85,7 +85,7 @@ function AuthProvider({ children }: AuthProviderProps) {
   }
 
   async function signOut() {
-    setUser({} as User);
+    setUser({} as IUser);
     await AsyncStorage.removeItem(COLLECTION_USERS)
   }
 
@@ -93,7 +93,7 @@ function AuthProvider({ children }: AuthProviderProps) {
     const storage = await AsyncStorage.getItem(COLLECTION_USERS);
 
     if (storage) {
-      const userLogged = JSON.parse(storage) as User;
+      const userLogged = JSON.parse(storage) as IUser;
       api.defaults.headers.authorization = `Bearer ${userLogged.token}`;
 
       setUser(userLogged)

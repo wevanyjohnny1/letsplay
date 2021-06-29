@@ -2,7 +2,17 @@ import React from 'react';
 import theme from '../../global/styles/theme';
 import { useAuth } from '../../hooks/auth';
 
-import { Container, TitleContainer, Title, TitleRed, ButtonContainer, ButtonYes, ButtonBorder, ButtonNo, ButtonText } from './styles';
+import {
+  Container,
+  TitleContainer,
+  Title,
+  TitleRed,
+  ButtonContainer,
+  ButtonYes,
+  ButtonBorder,
+  ButtonNo,
+  ButtonText
+} from './styles';
 
 export function SignOutBox() {
   const { secondary80, secondary100 } = theme.colors;
@@ -31,9 +41,6 @@ export function SignOutBox() {
             </ButtonText>
           </ButtonNo>
         </ButtonBorder>
-        {/* <SignOutButton
-          onPress={signOut}
-        /> */}
         <ButtonYes onPress={signOut}>
           <ButtonText>
             Sim

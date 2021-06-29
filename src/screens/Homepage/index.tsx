@@ -9,7 +9,7 @@ import {
   GameBox,
 } from './styles';
 
-import { Appointment, AppointmentProps } from '../../components/Appointment';
+import { Appointment, IAppointmentProps } from '../../components/Appointment';
 import { CategorySelect } from '../../components/CategorySelect';
 import { ListDivider } from '../../components/ListDivider';
 import { ListHeader } from '../../components/ListHeader';
@@ -20,7 +20,7 @@ import { Load } from '../../components/Load';
 
 export function Homepage() {
   const [category, setCategory] = useState('');
-  const [appointments, setAppointments] = useState<AppointmentProps[]>([]);
+  const [appointments, setAppointments] = useState<IAppointmentProps[]>([]);
   const [loading, setLoading] = useState(true);
 
   const navigation = useNavigation();
@@ -29,7 +29,7 @@ export function Homepage() {
     categoryId === category ? setCategory('') : setCategory(categoryId);
   }
 
-  function handleAppointmentDetails(guildSelected: AppointmentProps) {
+  function handleAppointmentDetails(guildSelected: IAppointmentProps) {
     navigation.navigate('AppointmentDetails', { guildSelected })
   }
 
@@ -40,7 +40,7 @@ export function Homepage() {
 
   async function loadAppointments() {
     const response = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS);
-    const storage: AppointmentProps[] = response ? JSON.parse(response) : [];
+    const storage: IAppointmentProps[] = response ? JSON.parse(response) : [];
 
     if (category) {
       setAppointments(storage.filter(item => item.category === category))

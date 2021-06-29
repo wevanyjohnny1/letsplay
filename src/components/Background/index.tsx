@@ -2,11 +2,11 @@ import React, { ReactNode } from 'react';
 import { Container } from './styles';
 import theme from '../../global/styles/theme';
 
-interface Props {
+interface IBackgroundProps {
   children: ReactNode;
 }
 
-export function Background({ children }: Props) {
+export function Background({ children }: IBackgroundProps) {
   const { secondary80, secondary100 } = theme.colors;
 
   return (

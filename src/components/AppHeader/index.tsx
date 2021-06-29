@@ -6,14 +6,12 @@ import { Feather } from '@expo/vector-icons';
 import { Container, GoBackButton, Title, Action } from './styles';
 import { useNavigation } from '@react-navigation/native';
 
-// import { Background } from '../../components/Background';
-
-interface Props {
+interface IAppHeaderProps {
   title: string;
   action?: ReactNode;
 }
 
-export function AppHeader({ title, action }: Props) {
+export function AppHeader({ title, action }: IAppHeaderProps) {
   const { secondary100, secondary40, heading } = theme.colors;
 
   const navigation = useNavigation();

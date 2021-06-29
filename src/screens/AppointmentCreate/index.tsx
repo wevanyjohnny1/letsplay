@@ -33,13 +33,13 @@ import { TextArea } from '../../components/TextArea';
 import Button from '../../components/Button';
 import { ModalView } from '../../components/ModalView';
 import { Guilds } from '../Guilds';
-import { GuildProps } from '../../components/Guild';
+import { IGuildProps } from '../../components/Guild';
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
 
 export function AppointmentCreate() {
   const [category, setCategory] = useState('');
   const [openGuildsModal, setOpenGuildsModal] = useState(false);
-  const [guild, setGuild] = useState<GuildProps>({} as GuildProps);
+  const [guild, setGuild] = useState<IGuildProps>({} as IGuildProps);
 
   const [day, setDay] = useState('');
   const [month, setMonth] = useState('');
@@ -57,7 +57,7 @@ export function AppointmentCreate() {
     setOpenGuildsModal(false);
   }
 
-  function handleGuildSelect(guildSelectec: GuildProps) {
+  function handleGuildSelect(guildSelectec: IGuildProps) {
     setGuild(guildSelectec);
     setOpenGuildsModal(false);
   }

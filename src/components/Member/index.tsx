@@ -2,9 +2,16 @@ import React from 'react';
 import theme from '../../global/styles/theme';
 import { Avatar } from '../Avatar';
 
-import { Container, Title, Status, StatusTitle, ContentText, StatusBuble } from './styles';
+import {
+  Container,
+  Title,
+  Status,
+  StatusTitle,
+  ContentText,
+  StatusBuble
+} from './styles';
 
-export interface MemberProps {
+export interface IMemberProps {
   id: string;
   username: string;
   avatar_url: string;
@@ -12,7 +19,7 @@ export interface MemberProps {
 }
 
 interface Props {
-  data: MemberProps;
+  data: IMemberProps;
 }
 
 export function Member({ data }: Props) {

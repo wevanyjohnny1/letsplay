@@ -1,6 +1,7 @@
 import React from 'react';
-import { TouchableHighlightProps } from 'react-native';
+import { TouchableOpacityProps } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
+import theme from '../../global/styles/theme';
 import { Feather } from '@expo/vector-icons';
 
 import { GuildIcon } from '../GuildIcon';
@@ -12,17 +13,16 @@ import {
   Title,
   Type
 } from './styles';
-import theme from '../../global/styles/theme';
 
-export interface GuildProps {
+export interface IGuildProps {
   id: string;
   name: string;
   icon: string | null;
   owner: boolean;
 }
 
-interface Props extends TouchableHighlightProps {
-  data: GuildProps;
+interface Props extends TouchableOpacityProps {
+  data: IGuildProps;
 }
 
 export function Guild({ data, ...rest }: Props) {

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
+import { Alert } from 'react-native';
+
 import { useAuth } from '../../hooks/auth';
 import { Avatar } from '../Avatar';
+
 import {
   UserContainer,
   AvatarContainer,
@@ -12,10 +15,10 @@ import {
   GreetingsContainer,
   LogoutButton
 } from './styles';
+
 import theme from '../../global/styles/theme';
 import { ModalLogout } from '../ModalLogout';
 import { SignOutBox } from '../SignOutBox';
-import { Alert } from 'react-native';
 
 export function Profile() {
   const { user, signOut } = useAuth();
@@ -49,7 +52,7 @@ export function Profile() {
         <Avatar
           urlImage={user.avatar}
         />
-        <LogoutButton onPress={handleSignOut}>
+        <LogoutButton onPress={handleOpenLogoutModal}>
           <AntDesign
             name="poweroff"
             size={15}
@@ -70,7 +73,10 @@ export function Profile() {
           Hoje é dia de vitória
         </UserStatus>
       </TextContainer>
-      <ModalLogout visible={openLogoutModal} closeModal={handleCloseLogoutModal}>
+      <ModalLogout
+        visible={openLogoutModal}
+        closeModal={handleCloseLogoutModal}
+      >
         <SignOutBox />
       </ModalLogout>
     </UserContainer>

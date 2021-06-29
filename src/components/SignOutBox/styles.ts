@@ -48,9 +48,6 @@ export const ButtonBorder = styled(LinearGradient)`
 
 export const ButtonNo = styled(RectButton)`
   flex: 1;
-
-  /* background-color: ${({ theme }) => theme.colors.secondary80}; */
-
   border-radius: 8px;
 
   align-items: center;

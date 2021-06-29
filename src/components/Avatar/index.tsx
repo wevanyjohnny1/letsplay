@@ -2,11 +2,11 @@ import React from 'react';
 import theme from '../../global/styles/theme';
 import { Container, UserImage } from './styles';
 
-interface Props {
+interface IAvatarProps {
   urlImage: string;
 }
 
-export function Avatar({ urlImage }: Props) {
+export function Avatar({ urlImage }: IAvatarProps) {
   const { secondary50, secondary70 } = theme.colors;
 
   return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Guild, GuildProps } from '../../components/Guild';
+import { Guild, IGuildProps } from '../../components/Guild';
 import { ListDivider } from '../../components/ListDivider';
 import { Load } from '../../components/Load';
 import { api } from '../../services/api';
@@ -7,11 +7,11 @@ import { api } from '../../services/api';
 import { Container, Content } from './styles';
 
 interface Props {
-  handleGuildSelect: (guild: GuildProps) => void;
+  handleGuildSelect: (guild: IGuildProps) => void;
 }
 
 export function Guilds({ handleGuildSelect }: Props) {
-  const [guilds, setGuilds] = useState<GuildProps[]>([]);
+  const [guilds, setGuilds] = useState<IGuildProps[]>([]);
   const [loading, setLoading] = useState(true);
 
   async function fetchGuilds() {

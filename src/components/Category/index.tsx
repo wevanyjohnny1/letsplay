@@ -3,9 +3,15 @@ import { RectButtonProps } from 'react-native-gesture-handler';
 import theme from '../../global/styles/theme';
 import { SvgProps } from 'react-native-svg';
 
-import { Container, ContentContainer, CheckBox, Content, Title } from './styles';
+import {
+  Container,
+  ContentContainer,
+  CheckBox,
+  Content,
+  Title
+} from './styles';
 
-interface Props extends RectButtonProps {
+interface ICategoryProps extends RectButtonProps {
   title: string;
   icon: React.FC<SvgProps>;
   hasCheckBox?: boolean;
@@ -18,7 +24,7 @@ export function Category({
   checked = false,
   hasCheckBox = false,
   ...rest
-}: Props) {
+}: ICategoryProps) {
   const { secondary40, secondary50, secondary70, secondary75 } = theme.colors;
   return (
     <Container {...rest}>

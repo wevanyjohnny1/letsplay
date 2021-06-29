@@ -4,7 +4,7 @@ import { SvgProps } from 'react-native-svg';
 
 import { Button, ImageContainer, Text } from './styles';
 
-interface Props extends RectButtonProps {
+interface ISignInSocialButtonProps extends RectButtonProps {
   title: string;
   svg: React.FC<SvgProps>
 }
@@ -13,7 +13,7 @@ export default function SignInSocialButton({
   title,
   svg: Svg,
   ...rest
-}: Props) {
+}: ISignInSocialButtonProps) {
   return (
     <Button {...rest}>
       <ImageContainer>

@@ -2,12 +2,12 @@ import React from 'react';
 
 import { Container, Title, SubTitle } from './styles';
 
-interface Props {
+interface IListHeaderProps {
   title: string;
   subtitle: string;
 }
 
-export function ListHeader({ title, subtitle }: Props) {
+export function ListHeader({ title, subtitle }: IListHeaderProps) {
   return (
     <Container>
       <Title>

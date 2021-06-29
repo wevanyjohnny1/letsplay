@@ -12,22 +12,22 @@ import DiscordSvg from '../../assets/discord.svg';
 import { Background } from '../../components/Background';
 import { ListHeader } from '../../components/ListHeader';
 import { AppHeader } from '../../components/AppHeader';
-import { Member, MemberProps } from '../../components/Member';
+import { Member, IMemberProps } from '../../components/Member';
 import { ListDivider } from '../../components/ListDivider';
 import SignInSocialButton from '../../components/SignInSocialButton';
-import { AppointmentProps } from '../../components/Appointment';
+import { IAppointmentProps } from '../../components/Appointment';
 import { api } from '../../services/api';
 import { Load } from '../../components/Load';
 
 interface Params {
-  guildSelected: AppointmentProps;
+  guildSelected: IAppointmentProps;
 }
 
 interface GuildWidget {
   id: string;
   name: string;
   instant_invite: string;
-  members: MemberProps[];
+  members: IMemberProps[];
 }
 
 export function AppointmentDetails() {
