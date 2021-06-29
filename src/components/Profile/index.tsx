@@ -32,19 +32,19 @@ export function Profile() {
     setOpenLogoutModal(false);
   }
 
-  function handleSignOut() {
-    Alert.alert('Logout', 'Deseja sair do GamePlay?',
-      [
-        {
-          text: 'Não',
-          style: 'cancel'
-        },
-        {
-          text: 'Sim',
-          onPress: () => signOut()
-        }
-      ])
-  }
+  // function handleSignOut() {
+  //   Alert.alert('Logout', 'Deseja sair do GamePlay?',
+  //     [
+  //       {
+  //         text: 'Não',
+  //         style: 'cancel'
+  //       },
+  //       {
+  //         text: 'Sim',
+  //         onPress: () => signOut()
+  //       }
+  //     ])
+  // }
 
   return (
     <UserContainer>
