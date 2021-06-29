@@ -1,9 +1,8 @@
-import React, { Children, ReactNode } from 'react';
-import { ModalProps, TouchableWithoutFeedback } from 'react-native';
-import { useAuth } from '../../hooks/auth';
+import React, { ReactNode } from 'react';
+import { Modal, ModalProps, TouchableWithoutFeedback } from 'react-native';
 import { Background } from '../Background';
 
-import { Container, Overlay, ContentContainer, ButtonYes, ButtonText } from './styles';
+import { Overlay, ContentContainer } from './styles';
 
 interface Props extends ModalProps {
   children: ReactNode;
@@ -12,7 +11,7 @@ interface Props extends ModalProps {
 
 export function ModalLogout({ children, closeModal, ...rest }: Props) {
   return (
-    <Container
+    <Modal
       transparent
       animationType="slide"
       statusBarTranslucent
@@ -27,6 +26,6 @@ export function ModalLogout({ children, closeModal, ...rest }: Props) {
           </ContentContainer>
         </Overlay>
       </TouchableWithoutFeedback>
-    </Container>
+    </Modal>
   )
 }

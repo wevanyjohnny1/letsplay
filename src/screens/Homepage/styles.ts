@@ -1,9 +1,10 @@
 import styled from 'styled-components/native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { BorderlessButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View``;
+
+export const Title = styled.Text``;
 
 export const Header = styled.View`
   width: 100%;
@@ -14,10 +15,6 @@ export const Header = styled.View`
 `;
 
 export const Content = styled.View``;
-
-// export const GameContent = styled.View`
-//   margin-top: 42px;
-// `;
 
 export const GameBox = styled.FlatList`
   margin-top: 24px;

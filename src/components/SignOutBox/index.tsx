@@ -1,17 +1,12 @@
 import React from 'react';
 import theme from '../../global/styles/theme';
 import { useAuth } from '../../hooks/auth';
-import { SignOutButton } from '../SignOutButton';
 
-import { Container, TitleContainer, Title, TitleRed, ButtonContainer, ButtonBorder, ButtonNo, ButtonText } from './styles';
+import { Container, TitleContainer, Title, TitleRed, ButtonContainer, ButtonYes, ButtonBorder, ButtonNo, ButtonText } from './styles';
 
 export function SignOutBox() {
   const { secondary80, secondary100 } = theme.colors;
   const { signOut } = useAuth();
-
-  function Test() {
-    console.log('success')
-  }
 
   return (
     <Container>
@@ -36,10 +31,14 @@ export function SignOutBox() {
             </ButtonText>
           </ButtonNo>
         </ButtonBorder>
-        <SignOutButton
-          logOut={signOut}
-        // onPress={signOut}
-        />
+        {/* <SignOutButton
+          onPress={signOut}
+        /> */}
+        <ButtonYes onPress={signOut}>
+          <ButtonText>
+            Sim
+          </ButtonText>
+        </ButtonYes>
       </ButtonContainer>
     </Container>
   )

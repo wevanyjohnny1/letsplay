@@ -15,9 +15,10 @@ import {
 import theme from '../../global/styles/theme';
 import { ModalLogout } from '../ModalLogout';
 import { SignOutBox } from '../SignOutBox';
+import { Alert } from 'react-native';
 
 export function Profile() {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
   const [openLogoutModal, setOpenLogoutModal] = useState(false);
 
   function handleOpenLogoutModal() {
@@ -28,13 +29,27 @@ export function Profile() {
     setOpenLogoutModal(false);
   }
 
+  function handleSignOut() {
+    Alert.alert('Logout', 'Deseja sair do GamePlay?',
+      [
+        {
+          text: 'Não',
+          style: 'cancel'
+        },
+        {
+          text: 'Sim',
+          onPress: () => signOut()
+        }
+      ])
+  }
+
   return (
     <UserContainer>
       <AvatarContainer>
         <Avatar
           urlImage={user.avatar}
         />
-        <LogoutButton onPress={handleOpenLogoutModal}>
+        <LogoutButton onPress={handleSignOut}>
           <AntDesign
             name="poweroff"
             size={15}
